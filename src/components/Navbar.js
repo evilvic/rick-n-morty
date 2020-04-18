@@ -1,10 +1,10 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { Nav } from '../style/components'
+import { StyledNav } from '../style/components'
 
 const Navbar = () => {
     return (
-        <Nav>
+        <StyledNav>
             <NavLink to='/'>
                 <img
                     src='https://res.cloudinary.com/evilvic/image/upload/v1587179856/rick-n-morty/rnm-logo.png' 
@@ -16,7 +16,7 @@ const Navbar = () => {
                 <NavLink to='/episodes'>EPISODES</NavLink>
                 <NavLink to='/register'>REGISTER</NavLink>
             </section>
-        </Nav>
+        </StyledNav>
     )
 }
 

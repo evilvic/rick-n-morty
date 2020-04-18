@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 import { colors } from './index'
 
-export const Nav = styled.nav`
+export const StyledNav = styled.nav`
 
     @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
 
     width: 100vw;
     height: 250px;
@@ -30,7 +31,7 @@ export const Nav = styled.nav`
             padding: 5px;
             font-family: 'Baloo 2', sans-serif;
             font-size: 1.8rem;
-            color: ${colors.white};
+            color: ${colors.yellow};
             
             &.active {
                 font-size: 2rem;
@@ -55,6 +56,60 @@ export const Nav = styled.nav`
             width: 50%;
         }
 
+    }
+
+`
+
+export const StyledForm = styled.form`
+
+    width: 90%;
+    padding: 35px 0;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: ${colors.transparent};
+
+    h2 {
+        width: 80%;
+        padding: 10px;
+        font-family: 'Baloo 2', sans-serif;
+        font-size: 3.5rem;
+        color: ${colors.purple};
+        text-align: center;
+    }
+
+    p {
+        width: 80%;
+        padding: 5px;
+        margin-bottom: 30px;
+        font-size: 2.5rem;
+        font-weight: 400;
+        color: ${colors.pink};
+        text-align: center;
+    }
+
+    label {
+        width: 80%;
+        margin-bottom: 5px;
+        font-size: 1.5rem;
+        color: ${colors.blue};
+    }
+
+    input {
+        width: 80%;
+        height: 30px;
+        margin-bottom: 20px;
+    }
+
+    button {
+        width: 80%;
+        height: 40px;
+        margin: 20px 0;
+        font-family: 'Baloo 2', sans-serif;
+        font-size: 2rem;
+        color: ${colors.white};
+        background-color: ${colors.pink};
     }
 
 `
