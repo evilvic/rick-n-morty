@@ -63,6 +63,7 @@ export const StyledNav = styled.nav`
 export const StyledForm = styled.form`
 
     width: 90%;
+    height: 600px;
     padding: 35px 0;
     display: flex;
     flex-direction:column;
@@ -100,6 +101,8 @@ export const StyledForm = styled.form`
         width: 80%;
         height: 30px;
         margin-bottom: 20px;
+        font-size: 1.5rem;
+        text-align: center;
     }
 
     button {
@@ -108,8 +111,22 @@ export const StyledForm = styled.form`
         margin: 20px 0;
         font-family: 'Baloo 2', sans-serif;
         font-size: 2rem;
+        font-weight: 800;
         color: ${colors.white};
         background-color: ${colors.pink};
     }
+
+`
+
+export const StyledProfile = styled.article`
+
+    width: 90%;
+    height: 600px;
+    padding: 35px 0;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: ${colors.transparent};
 
 `
