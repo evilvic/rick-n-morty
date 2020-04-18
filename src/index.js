@@ -1,13 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import { BrowserRouter } from 'react-router-dom'
+import MyProvider from './Context'
+import Router from './Router'
+import GlobalStyles from './style'
 import * as serviceWorker from './serviceWorker';
 
+const WithContext = () => (
+  <BrowserRouter>
+    <MyProvider>
+      <Router />
+    </MyProvider>
+  </BrowserRouter>
+)
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <>
+    <GlobalStyles />
+    <WithContext />
+  </>
+  , document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
