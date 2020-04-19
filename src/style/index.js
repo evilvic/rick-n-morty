@@ -21,7 +21,8 @@ export const colors = {
     blue: 'rgba(5, 180, 205, 1)',
     pink: 'rgba(220, 80, 130, 1)',
     yellow: 'rgba(250, 210, 65, 1)',
-    purple: 'rgba(160, 105, 180)'
+    purple: 'rgba(160, 105, 180)',
+    gray: 'rgba(75, 75, 75, 1)'
 }
 
 export default createGlobalStyle`
@@ -38,13 +39,34 @@ export default createGlobalStyle`
         text-decoration: none;
     }
 
+    h2 {
+        width: 80%;
+        padding: 10px;
+        font-family: 'Baloo 2', sans-serif;
+        font-size: 3.5rem;
+        color: ${colors.pink};
+        text-align: center;
+    }
+
     .container {
         width: 100vw;
         height: auto;
         padding: 35px 0;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    .gallery {
+        width: 100vw;
+        height: auto;
+        padding: 35px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: ${colors.gray}
     }
 
     #register-bg {

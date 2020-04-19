@@ -1,5 +1,6 @@
 import React, { Component, createContext } from 'react'
 import { withRouter } from 'react-router-dom'
+import API_SERVICE from './services/api'
 import Swal from 'sweetalert2'
 
 export const MyContext = createContext()
@@ -18,7 +19,20 @@ class MyProvider extends Component {
             username: '',
             email: '',
             password: ''
-        }
+        },
+        characters: [],
+        episodes: []
+    }
+
+    componentDidMount = async () => {
+        const { data: { results : characters } } = await API_SERVICE.getCharacters()
+        const { data: { results : episodes} } = await API_SERVICE.getEpisodes()
+        this.setState(prevState => ({
+            ...prevState,
+            characters: characters,
+            episodes: episodes
+        }))
+        console.log(this.state)
     }
 
     handleRegisterInput = e => {

@@ -4,7 +4,7 @@ const baseURL = 'https://rickandmortyapi.com/api'
 
 const MY_SERVICE = axios.create({
     baseURL,
-    withCredentials: true
+    withCredentials: false
 })
 
 const API_SERVICE = {

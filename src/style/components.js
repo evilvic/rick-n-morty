@@ -193,3 +193,47 @@ export const StyledProfile = styled.article`
     }
 
 `
+
+export const StyledGallery = styled.div`
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: space-between;
+`
+
+export const StyledCard = styled.article`
+    width: 300px;
+    height: 400px;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: ${colors.black};
+
+    img {
+        width: 280px;
+        height: 280px;
+        margin-bottom: 5px;
+    }
+
+    h3 {
+        width: 280px;
+        padding-top: 10px;
+        font-family: 'Baloo 2', sans-serif;
+        font-size: 2rem;
+        color: ${colors.yellow};
+        text-align: center;
+    }
+
+    h4 {
+        width: 280px;
+        font-size: 1.5rem;
+        color: ${colors.white};
+        text-align: center;
+    }
+
+`
