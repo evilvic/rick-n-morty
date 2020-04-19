@@ -9,7 +9,11 @@ const Register = () => (
                 {!context.state.isLoggedIn ? 
                 <StyledForm onSubmit={context.handleRegisterSubmit}>
                     <h2>Register</h2>
+                    {context.state.error ? 
+                    <p>Password must be at least 8 characters.</p>
+                    :
                     <p>Show me what you got!</p>
+                    }
                     <label>USERNAME</label>
                     <input 
                         placeholder='evilvic'
@@ -41,7 +45,17 @@ const Register = () => (
                 </StyledForm>
                 : 
                 <StyledProfile>
-                    
+                    <h2>Profile</h2>
+                    <p>Get Schwifty!</p>
+                    <img
+                        src='https://res.cloudinary.com/evilvic/image/upload/v1587255517/rick-n-morty/rnm-profile.jpg'
+                        alt='Profile Meeseek'
+                    />
+                    <h3>{context.state.loggedUser.username}</h3>
+                    <p className='label'>USERNAME</p>
+                    <h3>{context.state.loggedUser.email}</h3>
+                    <p className='label'>EMAIL</p>
+                    <button onClick={context.handleLogOut}>LOG OUT</button>
                 </StyledProfile>
                 }
             </section>

@@ -12,6 +12,7 @@ class MyProvider extends Component {
             email: '',
             password: ''
         },
+        error: false,
         isLoggedIn: false,
         loggedUser: {
             username: '',
@@ -21,7 +22,9 @@ class MyProvider extends Component {
     }
 
     handleRegisterInput = e => {
+
         const { name, value } = e.target
+
         this.setState(prevState => ({
             ...prevState,
             registerForm: {
@@ -29,33 +32,62 @@ class MyProvider extends Component {
                 [name]: value
             }
         }))
+
     }
 
     handleRegisterSubmit = e => {
+
         e.preventDefault()
-        // validación de password
-        const { username, email, password } = this.state.registerForm
+
+        if (this.state.registerForm.password.length > 7) {
+
+            const { username, email, password } = this.state.registerForm
+
+            this.setState(prevState => ({
+                ...prevState,
+                registerForm: {
+                    username: '',
+                    email: '',
+                    password: ''
+                },
+                error: false,
+                isLoggedIn: true,
+                loggedUser: {
+                    username: username,
+                    email: email,
+                    password: password
+                }
+            }))
+
+            Swal.fire(
+                'Hey @' + username + '!',
+                'Your registration was successful.',
+                'success'
+            )
+
+        } else {
+
+            this.setState(prevState => ({
+                ...prevState,
+                error: true
+            }))
+
+        }
+
+    }
+
+    handleLogOut = e => {
+
         this.setState(prevState => ({
             ...prevState,
-            registerForm: {
+            isLoggedIn: false,
+            loggedUser: {
                 username: '',
                 email: '',
                 password: ''
-            },
-            isLoggedIn: true,
-            loggedUser: {
-                username: username,
-                email: email,
-                password: password
             }
         }))
-        
-        Swal.fire(
-            'Hey @' + username + '!',
-            'Your registration was successful.',
-            'success'
-        )
-          
+
     }
 
     render() {
@@ -63,7 +95,8 @@ class MyProvider extends Component {
         const {
             state,
             handleRegisterInput,
-            handleRegisterSubmit
+            handleRegisterSubmit,
+            handleLogOut
         } = this
 
         return (
@@ -71,13 +104,16 @@ class MyProvider extends Component {
                 value={{
                     state,
                     handleRegisterInput,
-                    handleRegisterSubmit
+                    handleRegisterSubmit,
+                    handleLogOut
                 }}
             >
                 {this.props.children}
             </MyContext.Provider>
         )
+
     }
+    
 }
 
 export default withRouter(MyProvider)

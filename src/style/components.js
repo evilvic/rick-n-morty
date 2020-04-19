@@ -116,6 +116,10 @@ export const StyledForm = styled.form`
         background-color: ${colors.pink};
     }
 
+    @media (min-width: 520px) {
+        width: 460px;
+    }
+
 `
 
 export const StyledProfile = styled.article`
@@ -125,8 +129,67 @@ export const StyledProfile = styled.article`
     padding: 35px 0;
     display: flex;
     flex-direction:column;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
     background-color: ${colors.transparent};
+
+    h2 {
+        width: 80%;
+        padding: 10px;
+        font-family: 'Baloo 2', sans-serif;
+        font-size: 3.5rem;
+        color: ${colors.purple};
+        text-align: center;
+    }
+
+    p {
+        width: 80%;
+        padding: 5px;
+        margin-bottom: 30px;
+        font-size: 2.5rem;
+        font-weight: 400;
+        color: ${colors.pink};
+        text-align: center;
+    }
+
+    img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 25px;
+    }
+
+    h3 {
+        width: 80%;
+        font-family: 'Baloo 2', sans-serif;
+        font-size: 2.5rem;
+        color: ${colors.blue};
+        text-align: center;
+    }
+
+    .label {
+        width: 80%;
+        padding: 5px;
+        margin-bottom: 25px;
+        font-size: 1rem;
+        font-weight: 400;
+        color: ${colors.pink};
+        text-align: center;
+    }
+
+    button {
+        width: 80%;
+        height: 40px;
+        margin: 20px 0;
+        font-family: 'Baloo 2', sans-serif;
+        font-size: 2rem;
+        font-weight: 800;
+        color: ${colors.white};
+        background-color: ${colors.pink};
+    }
+
+    @media (min-width: 520px) {
+        width: 460px;
+    }
 
 `

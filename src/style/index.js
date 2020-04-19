@@ -22,7 +22,6 @@ export const colors = {
     pink: 'rgba(220, 80, 130, 1)',
     yellow: 'rgba(250, 210, 65, 1)',
     purple: 'rgba(160, 105, 180)'
-
 }
 
 export default createGlobalStyle`
@@ -52,6 +51,18 @@ export default createGlobalStyle`
         background-image: url(https://res.cloudinary.com/evilvic/image/upload/v1587221062/rick-n-morty/rnm-register-bg.jpg);
         background-size: cover;
         background-position:center;
+    }
+
+    @media (min-width: 520px) {
+        .container {
+            height: 850px;
+        }
+    }
+
+    @media (min-width: 767px) {
+        .container {
+            height: 100vh;
+        }
     }
     
 `
