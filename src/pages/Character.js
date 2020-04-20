@@ -43,7 +43,7 @@ const Character = () => (
                     </StyledTable>
                 </section>
             )
-            else return <h3>Loading...</h3>
+            else return <div style={{width: '100vw', display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '200px'}}><img style={{height: '100px'}} src='https://res.cloudinary.com/evilvic/image/upload/v1587415948/rick-n-morty/rnm-gif.gif' alt='Rick loading...'/><p style={{color: 'white'}}>Loading...</p></div>
         }}
     </MyContext.Consumer>
 )

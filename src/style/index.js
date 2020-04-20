@@ -62,6 +62,38 @@ export default createGlobalStyle`
         align-items: center;
     }
 
+    .home-container {
+        width: 100vw;
+        height: 600px;
+        padding: 75px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        .white-rectangle {
+            background-color: ${colors.transparent};
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+        }
+
+        h2 {
+            width: 100%;
+            font-size: 3.5rem;
+            text-align: center;
+        }
+
+        p {
+            width: 100%;
+            font-size: 2.5rem;
+            text-align: center;
+            color: ${colors.blue};
+        }
+    }
+
     .gallery {
         width: 100vw;
         height: auto;
@@ -93,15 +125,42 @@ export default createGlobalStyle`
         background-position:center;
     }
 
+    #home-bg {
+        background-image: url(https://res.cloudinary.com/evilvic/image/upload/v1587412661/rick-n-morty/rnm-home-bg.png);
+        background-size: cover;
+        background-position: right;
+    }
+
     @media (min-width: 520px) {
         .container {
             height: 850px;
+            padding: 200px 0;
+        }
+        .gallery {
+            padding: 200px 0;
+        }
+        .home-container {
+            height: 850px;
+            padding: 200px 0;
         }
     }
 
     @media (min-width: 767px) {
         .container {
             height: 100vh;
+            padding: 100px 0;
+        }
+        .gallery {
+            padding: 100px 0;
+        }
+        .home-container {
+            height: 100vh;
+            padding: 200px 0;
+            .white-rectangle {
+                background-color: ${colors.transparent};
+                width: 600px;
+                height: 200px;
+            }
         }
     }
     

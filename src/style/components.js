@@ -44,6 +44,8 @@ export const StyledNav = styled.nav`
 
     @media (min-width: 520px) {
 
+        position: fixed;
+
         height: 100px;
         padding: 20px;
         flex-direction: row;
