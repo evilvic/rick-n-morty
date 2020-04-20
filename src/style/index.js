@@ -78,6 +78,15 @@ export default createGlobalStyle`
         justify-content: center;
     }
 
+    .characters {
+        margin: 30px 0 20px 0;
+        font-family: 'Baloo 2', sans-serif;
+        font-size: 2.5rem;
+        color: ${colors.blue};
+        text-align: center;
+
+    }
+
     #register-bg {
         background-image: url(https://res.cloudinary.com/evilvic/image/upload/v1587221062/rick-n-morty/rnm-register-bg.jpg);
         background-size: cover;

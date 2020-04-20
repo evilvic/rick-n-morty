@@ -362,4 +362,8 @@ export const StyledEpisodes = styled.table`
         color: ${colors.blue};
         text-align: center;
     }
+
+    @media (min-width: 520px) {
+        width: 600px;
+    }
 `

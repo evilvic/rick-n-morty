@@ -23,7 +23,8 @@ class MyProvider extends Component {
         characters: [],
         character: null,
         episodes: [],
-        episode: null
+        episode: null,
+        episodeCharacters: []
     }
 
     componentDidMount = async () => {
@@ -49,17 +50,27 @@ class MyProvider extends Component {
     }
 
     getEpisode = async id => {
-        console.log(id)
+
         this.setState(prevState => ({
             ...prevState,
-            episode: null
+            episode: null,
+            episodeCharacters: []
         }))
-        const { data } = await API_SERVICE.getOneEpisode(id)
+
+        const { data, data : {characters} } = await API_SERVICE.getOneEpisode(id)
+
+        const regExp = /\d+/g
+        const charactersArray = []
+        characters.forEach(character => charactersArray.push(character.match(regExp)[0]))
+        
+        const { data : episodeCharacters } = await API_SERVICE.getEpisodeCharacters(charactersArray)
+
         this.setState(prevState => ({
             ...prevState,
-            episode: data
+            episode: data,
+            episodeCharacters: episodeCharacters
         }))
-        console.log(this.state)
+
     }
 
     handleRegisterInput = e => {

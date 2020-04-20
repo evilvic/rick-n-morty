@@ -1,11 +1,12 @@
 import React from 'react'
 import { MyContext } from '../Context'
-import { StyledEpisodes } from '../style/components'
+import Card from '../components/Card'
+import { StyledEpisodes, StyledGallery} from '../style/components'
 
 const Episode = () => (
     <MyContext.Consumer>
         {context => {
-            const {episode} = context.state
+            const {episode, episodeCharacters} = context.state
             if (episode)
             return (
                 <section className='gallery'>
@@ -22,6 +23,16 @@ const Episode = () => (
                             </tr>
                         </tbody>
                     </StyledEpisodes>
+                    <h3 className='characters'>Characters</h3>
+                    <StyledGallery>
+                        {episodeCharacters.map(character => <Card 
+                                                        key = {character.id} 
+                                                        src = {character.image}
+                                                        name = {character.name}
+                                                        place = {character.location.name}
+                                                        id = {character.id}
+                                                     />)}
+                    </StyledGallery>
                 </section>
             )
             else return <h3>Loading...</h3>
