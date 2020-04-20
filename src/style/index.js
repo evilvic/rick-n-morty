@@ -35,6 +35,10 @@ export default createGlobalStyle`
         font-size: 10px;
     }
 
+    body {
+        background-color: ${colors.gray}
+    }
+
     a {
         text-decoration: none;
     }

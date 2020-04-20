@@ -208,6 +208,7 @@ export const StyledGallery = styled.div`
 `
 
 export const StyledCard = styled.article`
+
     width: 300px;
     height: 400px;
     padding: 10px;
@@ -244,6 +245,64 @@ export const StyledCard = styled.article`
     a {
         font-size: 1.5rem;
         color: ${colors.blue}
+    }
+
+`
+
+export const StyledTable = styled.article`
+
+    width: 300px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: ${colors.black};
+
+    img {
+        width: 280px;
+        height: 280px;
+        margin-bottom: 30px;
+    }
+
+    table {
+        width: 90%;
+        border-collapse: collapse;
+        margin-bottom: 25px;
+    }
+
+    th {
+        height: 80px;
+        width: 40%;
+        border-bottom: 1px solid ${colors.yellow};
+        border-right: 1px solid ${colors.yellow};
+        color: ${colors.yellow};
+        font-size: 1.5rem;
+    }
+
+    td {
+        height: 80px;
+        border-bottom: 1px solid ${colors.yellow};
+        text-align: right;
+        color: ${colors.white};
+        font-size: 1.5rem;
+    }
+
+    .no-border {
+        border-bottom: 0;
+    }
+
+    @media (min-width: 620px) {
+        padding-top: 15px;
+        width: 620px;
+
+        img {
+            margin-right: 10px;
+        }
+
+        table {
+            width: 300px;
+            border-collapse: collapse;
+        }
     }
 
 `
