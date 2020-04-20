@@ -69,6 +69,11 @@ export default createGlobalStyle`
         background-color: ${colors.gray}
     }
 
+    .swal2-title {
+        display: flex;
+        justify-content: center;
+    }
+
     #register-bg {
         background-image: url(https://res.cloudinary.com/evilvic/image/upload/v1587221062/rick-n-morty/rnm-register-bg.jpg);
         background-size: cover;

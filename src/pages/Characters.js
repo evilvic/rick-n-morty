@@ -13,10 +13,11 @@ const Characters = () => (
                     <h2>Characters</h2>
                     <StyledGallery>
                         {characters.map(character => <Card 
-                                                        key={character.id} 
-                                                        src={character.image}
-                                                        name={character.name}
-                                                        place={character.location.name}
+                                                        key = {character.id} 
+                                                        src = {character.image}
+                                                        name = {character.name}
+                                                        place = {character.location.name}
+                                                        id = {character.id}
                                                      />)}
                     </StyledGallery>
                 </section>

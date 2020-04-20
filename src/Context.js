@@ -21,6 +21,7 @@ class MyProvider extends Component {
             password: ''
         },
         characters: [],
+        character: null,
         episodes: []
     }
 
@@ -32,7 +33,18 @@ class MyProvider extends Component {
             characters: characters,
             episodes: episodes
         }))
-        console.log(this.state)
+    }
+
+    getCharacter = async id => {
+        this.setState(prevState => ({
+            ...prevState,
+            character: null
+        }))
+        const { data } = await API_SERVICE.getOneCharacter(id)
+        this.setState(prevState => ({
+            ...prevState,
+            character: data
+        }))
     }
 
     handleRegisterInput = e => {
@@ -108,6 +120,7 @@ class MyProvider extends Component {
 
         const {
             state,
+            getCharacter,
             handleRegisterInput,
             handleRegisterSubmit,
             handleLogOut
@@ -117,6 +130,7 @@ class MyProvider extends Component {
             <MyContext.Provider
                 value={{
                     state,
+                    getCharacter,
                     handleRegisterInput,
                     handleRegisterSubmit,
                     handleLogOut

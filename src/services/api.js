@@ -11,6 +11,9 @@ const API_SERVICE = {
     getCharacters: async () => {
         return await MY_SERVICE.get('/character')
     },
+    getOneCharacter: async id => {
+        return await MY_SERVICE.get(`/character/${id}`)
+    },
     getEpisodes: async () => {
         return await MY_SERVICE.get('/episode')
     }

@@ -200,7 +200,11 @@ export const StyledGallery = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    align-items: space-between;
+    align-items: flex-start;
+
+    @media (min-width: 520px) {
+        width: 90%;
+    }
 `
 
 export const StyledCard = styled.article`
@@ -234,6 +238,12 @@ export const StyledCard = styled.article`
         font-size: 1.5rem;
         color: ${colors.white};
         text-align: center;
+        margin-bottom: 5px;
+    }
+
+    a {
+        font-size: 1.5rem;
+        color: ${colors.blue}
     }
 
 `
