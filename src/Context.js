@@ -27,7 +27,7 @@ class MyProvider extends Component {
 
     componentDidMount = async () => {
         const { data: characters } = await API_SERVICE.getCharacters()
-        const { data: { results : episodes} } = await API_SERVICE.getEpisodes()
+        const { data: episodes } = await API_SERVICE.getEpisodes()
         this.setState(prevState => ({
             ...prevState,
             characters: characters,
