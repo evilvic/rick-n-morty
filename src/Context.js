@@ -22,7 +22,8 @@ class MyProvider extends Component {
         },
         characters: [],
         character: null,
-        episodes: []
+        episodes: [],
+        episode: null
     }
 
     componentDidMount = async () => {
@@ -45,6 +46,20 @@ class MyProvider extends Component {
             ...prevState,
             character: data
         }))
+    }
+
+    getEpisode = async id => {
+        console.log(id)
+        this.setState(prevState => ({
+            ...prevState,
+            episode: null
+        }))
+        const { data } = await API_SERVICE.getOneEpisode(id)
+        this.setState(prevState => ({
+            ...prevState,
+            episode: data
+        }))
+        console.log(this.state)
     }
 
     handleRegisterInput = e => {
@@ -121,6 +136,7 @@ class MyProvider extends Component {
         const {
             state,
             getCharacter,
+            getEpisode,
             handleRegisterInput,
             handleRegisterSubmit,
             handleLogOut
@@ -131,6 +147,7 @@ class MyProvider extends Component {
                 value={{
                     state,
                     getCharacter,
+                    getEpisode,
                     handleRegisterInput,
                     handleRegisterSubmit,
                     handleLogOut

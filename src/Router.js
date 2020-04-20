@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Characters from './pages/Characters'
 import Character from './pages/Character'
 import Episodes from './pages/Episodes'
+import Episode from './pages/Episode'
 import Register from './pages/Register'
 
 const Router = () => (
@@ -15,6 +16,7 @@ const Router = () => (
             <Route exact path='/characters' component={Characters} />
             <Route exact path='/character' component={Character} />
             <Route exact path='/episodes' component={Episodes} />
+            <Route exact path='/episode' component={Episode} />
             <Route exact path='/register' component={Register} />
         </Switch>
     </>

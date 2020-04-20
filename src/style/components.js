@@ -306,3 +306,60 @@ export const StyledTable = styled.article`
     }
 
 `
+export const StyledEpisodes = styled.table`
+
+    width: 300px;
+    border: 1px solid ${colors.yellow};
+    background-color: ${colors.black};
+    border-collapse: collapse;
+
+    thead {
+        background-color: ${colors.yellow};
+
+        .table-title {
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 10px;
+        }
+    }
+
+    th, td {
+        border: 1px solid ${colors.yellow};
+        height: 80px;
+        font-size: 1.5rem;
+    }
+
+    td {
+        color: ${colors.white};
+    }
+
+    .episode {
+        padding-left: 10px;
+    }
+
+    .date{
+        text-align: center;
+        font-size: 1rem;
+        padding: 3px;
+    }
+
+    .more {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .yellow {
+        background-color: ${colors.yellow};
+    }
+
+    .description {
+        text-align: center;
+    }
+
+    a {
+        font-size: 1.2rem;
+        color: ${colors.blue};
+        text-align: center;
+    }
+`
